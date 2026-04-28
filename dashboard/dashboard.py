@@ -93,7 +93,7 @@ def load_data(data_path=DATA_PATH):
 
 # ── Try load data ─────────────────────────────────────────────────────────────
 try:
-    raw_df = load_data("../data")
+    raw_df = load_data(DATA_PATH)
     data_loaded = True
 except FileNotFoundError as e:
     data_loaded = False
