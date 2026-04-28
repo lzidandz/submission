@@ -36,8 +36,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── Load & Cache Data ─────────────────────────────────────────────────────────
+BASE_DIR =os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "../data")
+
 @st.cache_data
-def load_data(data_path="../data"):
+def load_data(data_path=DATA_PATH):
     orders      = pd.read_csv(os.path.join(data_path, "olist_orders_dataset.csv"))
     payments    = pd.read_csv(os.path.join(data_path, "olist_order_payments_dataset.csv"))
     reviews     = pd.read_csv(os.path.join(data_path, "olist_order_reviews_dataset.csv"))
